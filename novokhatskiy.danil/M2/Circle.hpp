@@ -15,6 +15,8 @@ namespace novokhatskiy
     bool operator<(const Circle& other) const noexcept;
   };
 
+  using mySet = std::map< std::string, Circle >;
+
   std::istream& operator>>(std::istream& in, Circle& circle);
   std::ostream& operator<<(std::ostream& out, const Circle& circle);
 
