@@ -11,18 +11,27 @@ namespace novokhatskiy
   {
     Circle() = default;
     int r = 0;
-    std::pair< int, int > p;
-    bool operator<(const Circle& other) const noexcept;
+    std::pair<int, int> p;
+    bool operator<(const Circle &other) const noexcept;
   };
 
-  using mySet = std::map< std::string, Circle >;
+  struct Rectangle
+  {
+    std::pair<int, int> leftBottom;
+    std::pair<int, int> rightTop;
+    bool operator<(const Rectangle &other) const;
+  };
 
-  std::istream& operator>>(std::istream& in, Circle& circle);
-  std::ostream& operator<<(std::ostream& out, const Circle& circle);
+  std::ostream &operator<<(std::ostream &out, const Rectangle &rec);
+
+  using mySet = std::map<std::string, Circle>;
+
+  std::istream &operator>>(std::istream &in, Circle &circle);
+  std::ostream &operator<<(std::ostream &out, const Circle &circle);
 
   struct SetCircles
   {
-    std::map<std::string, std::map< std::string, Circle > >circles;
+    std::map<std::string, std::map<std::string, Circle>> circles;
   };
 }
 #endif
